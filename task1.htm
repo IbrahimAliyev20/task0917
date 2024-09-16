@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <p> <input type="text" id="metn" placeholder="terse cevirir"></p>
+    <p><button onclick="tersCevir()">OK</button></p>
+    <h1 id="yekun"></h1>
+    <script>
+        let yekun = document.getElementById("yekun")
+        function tersCevir(){
+            let cevir = document.getElementById("metn").value;
+            let cevrildi = cevir.split('').reverse().join('');
+            yekun.innerHTML = cevrildi
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="tameded" placeholder="reqem yaz">
+    <button onclick="iseSal()">ok</button>
+    <h1 id="yekun"></h1>
+    <script>
+        function iseSal(){
+            let tameded = document.getElementById("tameded").value 
+            let yekun = document.getElementById("yekun")
+            let kod = tameded.split('')
+            let hesab = 0
+            for (let i = 0; i < kod.length; i++) {
+                let tekreqem = parseInt(kod[i]);
+                if(tekreqem % 2 !== 0){
+                    hesab += tekreqem
+                }
+            }
+            yekun.innerHTML = hesab
+        }
+    </script>
+</body>
+</html>

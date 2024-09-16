@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <input type="text" id="metn" placeholder="yaz bura">
+    <button onclick="UnikalSimvollar()">OK</button>
+    <h1 id="yekun"></h1>
+    <script>
+        function UnikalSimvollar() {
+            let metn = document.getElementById("metn").value;
+            let yekun = document.getElementById("yekun");
+            let unikalSimvollar = [];
+
+            for(let i = 0; i < metn.length; i++) {
+                let herfler = metn[i];
+                if(metn.indexOf(herfler) === metn.lastIndexOf(herfler)) {
+                    unikalSimvollar.push(herfler);
+                }
+            }
+            if(unikalSimvollar.length > 0){
+                yekun.innerHTML = `${unikalSimvollar.length} : ${unikalSimvollar}`;
+            }
+            else{
+                yekun.innerHTML = "unikal simvol tapilmadi"
+            }
+        }
+    </script>
+</body>
+</html>

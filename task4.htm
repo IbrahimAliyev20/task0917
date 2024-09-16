@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <input type="text" id="array">
+    <button onclick="buton()">OK</button>
+    <h1 id="yekun"></h1>
+    <script>
+        function buton() {
+            let array = document.getElementById("array").value.split(','); 
+            let yekun = document.getElementById("yekun");
+
+            let dublikatlar = array.filter((element, index) => {
+                return array.indexOf(element) !== index;
+            });
+            dublikatlar = [...new Set(dublikatlar)];
+
+            yekun.innerHTML =dublikatlar.join(',');
+        }
+    </script>
+</body>
+</html>
